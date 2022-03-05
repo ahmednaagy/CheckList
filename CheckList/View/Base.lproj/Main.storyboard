@@ -191,7 +191,7 @@ FhYW4oiaA
                                                     <rect key="frame" x="20" y="9" width="374" height="26"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="26" id="Iyh-g4-B8P"/>
-                                                        <constraint firstAttribute="width" constant="374" id="eES-ev-u9i"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="374" id="eES-ev-u9i"/>
                                                     </constraints>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>

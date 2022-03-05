@@ -18,6 +18,7 @@
 		E272D6E227B6AC20007AE700 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272D6E127B6AC20007AE700 /* Constants.swift */; };
 		E272D6E427B6CA24007AE700 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E272D6E327B6CA24007AE700 /* ChecklistItem.swift */; };
 		E295756C27C6AB4E00DE0AAA /* ListDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295756B27C6AB4E00DE0AAA /* ListDetailViewController.swift */; };
+		E2B5383127D40798005C93DC /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B5383027D40798005C93DC /* DataModel.swift */; };
 		E2E2009A27B9B0DA00A82AA5 /* ItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E2009927B9B0DA00A82AA5 /* ItemDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		E272D6E127B6AC20007AE700 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E272D6E327B6CA24007AE700 /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		E295756B27C6AB4E00DE0AAA /* ListDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailViewController.swift; sourceTree = "<group>"; };
+		E2B5383027D40798005C93DC /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		E2E2009927B9B0DA00A82AA5 /* ItemDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 		E2C731C427BDA7F300669083 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2B5383027D40798005C93DC /* DataModel.swift */,
 				E272D6E327B6CA24007AE700 /* ChecklistItem.swift */,
 				E257B0DA27C39A1700CEA731 /* Checklist.swift */,
 			);
@@ -193,6 +196,7 @@
 				E272D6E427B6CA24007AE700 /* ChecklistItem.swift in Sources */,
 				E272D6DF27B6ABEE007AE700 /* ChecklistViewController.swift in Sources */,
 				E257B0DB27C39A1700CEA731 /* Checklist.swift in Sources */,
+				E2B5383127D40798005C93DC /* DataModel.swift in Sources */,
 				E272D6CD27B6AB8F007AE700 /* SceneDelegate.swift in Sources */,
 				E295756C27C6AB4E00DE0AAA /* ListDetailViewController.swift in Sources */,
 				E272D6E227B6AC20007AE700 /* Constants.swift in Sources */,

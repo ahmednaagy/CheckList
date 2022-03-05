@@ -8,43 +8,26 @@
 import UIKit
 
 class AllListsViewController: UITableViewController, ListDetailViewControllerDelegate {
-
+    
     
     
     // data source
     var lists = [Checklist]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Add placeholder data
-        var list = Checklist(name: "Birthdays")
-        lists.append(list)
-        
-        list = Checklist(name: "Groceries")
-        lists.append(list)
-        
-        list = Checklist(name: "Cool Apps")
-        lists.append(list)
-        
-        list = Checklist(name: "To Do")
-        lists.append(list)
-
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constants.AllListViewControllerCellIdentifier)
         
         // Enable large titles
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        for list in lists {
-            let item = ChecklistItem()
-            item.text = "Item for \(list.name)"
-            list.items.append(item)
-        }
+        loadChecklists()
         
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return lists.count
@@ -111,6 +94,46 @@ class AllListsViewController: UITableViewController, ListDetailViewControllerDel
         } else if segue.identifier == Constants.addCheckListSegue {
             let controller = segue.destination as! listDetailViewController
             controller.delegate = self
+        }
+    }
+    
+    // MARK: - Data Saving
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(
+            for: .documentDirectory,
+               in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("Checklist.plist")
+    }
+    
+    func saveChecklists() {
+        let encoder = PropertyListEncoder()
+        do {
+            // encode lists instead of "items"
+            let data = try encoder.encode(lists)
+            try data.write(
+                to: dataFilePath(),
+                options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error encoding list array: \(error.localizedDescription)")
+        }
+    }
+    
+    func loadChecklists() {
+        let path = dataFilePath()
+        if let data = try? Data(contentsOf: path) {
+            let decoder = PropertyListDecoder()
+            do {
+                // decode to an object of [Checklist] type to lists
+                lists = try decoder.decode(
+                    [Checklist].self,
+                    from: data)
+            } catch {
+                print("Error decoding list array: \(error.localizedDescription)")
+            }
         }
     }
     
